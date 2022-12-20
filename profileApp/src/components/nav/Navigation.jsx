@@ -118,13 +118,6 @@ function Navigation(props) {
           <Container>Contacts</Container>
         </Stack>
       </Drawer>
-      <Group
-        sx={{
-          backgroundColor: "#f123",
-          width: "inherit",
-          height: 1200,
-        }}
-      ></Group>
     </>
   );
 }
