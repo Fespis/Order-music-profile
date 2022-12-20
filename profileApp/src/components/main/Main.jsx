@@ -1,4 +1,4 @@
-import { createStyles } from "@mantine/core";
+import { Container, createStyles, Group } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { useState } from "react";
 
@@ -27,7 +27,17 @@ const useStyles = createStyles((theme) => ({
 function Main(props) {
   const mobile = useMediaQuery(`(max-width: 1060px)`);
 
-  return <></>;
+  return (
+    <>
+      <Container
+        sx={{
+          backgroundColor: "#f123",
+          width: "inherit",
+          height: 1200,
+        }}
+      ></Container>
+    </>
+  );
 }
 
 export default Main;

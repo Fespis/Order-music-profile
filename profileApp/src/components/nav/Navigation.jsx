@@ -55,13 +55,14 @@ function Navigation(props) {
   return (
     <>
       <Group
-        position={mobile ? "right" : "center"}
+        position={mobile && "right"}
         spacing={100}
         p={"lg"}
         sx={{
           backgroundColor: "#11171D",
           width: "inherit",
           height: `${props.height}px`,
+          justifyContent: !mobile && "space-around",
         }}
       >
         {mobile ? (
