@@ -2,6 +2,7 @@ import { Box, Button, Group, Image } from "@mantine/core";
 import mainImage from "./images/main.jpg";
 import Navigation from "./components/nav/Navigation";
 import { useMediaQuery } from "@mantine/hooks";
+import Main from "./components/main/Main";
 
 function App() {
   const HEIGHT_NAV = 120;
@@ -27,6 +28,7 @@ function App() {
         </Box>
       </Box>
       <Navigation height={HEIGHT_NAV} />
+      <Main />
     </Box>
   );
 }
