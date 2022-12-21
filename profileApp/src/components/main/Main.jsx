@@ -33,7 +33,11 @@ const useStyles = createStyles((theme) => ({
 }));
 
 function Main(props) {
-  const mobile = useMediaQuery(`(max-width: 1060px)`);
+  const tablet = useMediaQuery(`(max-width: 1060px)`);
+  const mobile = useMediaQuery(`(max-width: 640px)`);
+
+  const MinWidthForTablet = "60vw";
+  const MinWidthForMobile = "80vw";
 
   return (
     <>
@@ -43,8 +47,17 @@ function Main(props) {
           height: 1200,
         }}
       >
-        <Group pt={"xl"} position="center" grow sx={{ color: "#000" }}>
-          <Box>
+        <Group
+          pt={"xl"}
+          position="center"
+          grow
+          sx={{
+            color: "#000",
+            flexDirection: tablet ? "column-reverse" : "row",
+            minWidth: (mobile && MinWidthForMobile) || (tablet && MinWidthForTablet),
+          }}
+        >
+          <Box sx={{ minWidth: "inherit" }}>
             <Box>Anna Kalakoltsau</Box>
             <Box pt={"sm"} sx={{ fontSize: "0.75em" }}>
               About
@@ -70,8 +83,11 @@ function Main(props) {
               released by Tonkünstler label.
             </Box>
           </Box>
-          <Box>
-            <Box p={"sm"} sx={{ border: "1px solid black", borderRadius: "25px" }}>
+          <Box sx={{ minWidth: "inherit" }}>
+            <Box
+              p={"sm"}
+              sx={{ border: "1px solid black", borderRadius: "25px" }}
+            >
               <Image fit="fill" src={bioImage}></Image>
             </Box>
           </Box>
