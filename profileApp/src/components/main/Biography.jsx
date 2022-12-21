@@ -1,27 +1,6 @@
-import { Box, createStyles, Group, Image } from "@mantine/core";
+import { Box, Group, Image } from "@mantine/core";
 import bioImage from "../../images/bioImage.jpg";
 
-const useStyles = createStyles((theme) => ({
-  buttonLink: {
-    padding: "10px 20px",
-    width: 140,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    border: "1px solid #fff",
-    borderRadius: 50,
-    transition: "all ease 0.5s",
-    cursor: "pointer",
-    [theme.fn.smallerThan("1060")]: {
-      display: "none",
-    },
-
-    "&:hover": {
-      backgroundColor: "#fff",
-      color: "#000",
-    },
-  },
-}));
 
 function Biography(props) {
   const { adaptive } = props;
