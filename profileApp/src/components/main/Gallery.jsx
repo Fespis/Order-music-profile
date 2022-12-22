@@ -57,7 +57,7 @@ function Gallery(props) {
         <Box className={`${classes.widthMainBox}`}>
           <Stack>
             <Group position="center">Gallery</Group>
-            <Grid>{addImages(12)}</Grid>
+            <Grid>{addImages(mainData.countImagesInGallery)}</Grid>
           </Stack>
         </Box>
       </Group>

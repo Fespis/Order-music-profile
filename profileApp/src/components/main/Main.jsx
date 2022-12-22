@@ -38,6 +38,7 @@ function Main() {
     MinWidthForTablet: MinWidthForTablet,
     MinWidthForMobile: MinWidthForMobile,
     ptForBlocks: 50,
+    countImagesInGallery: 12,
   };
 
   return (
