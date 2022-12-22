@@ -19,7 +19,10 @@ function Biography(props) {
         }}
       >
         <Box sx={{ minWidth: "inherit" }}>
-          <Group position={adaptive.tablet ? "center" : "left"}>
+          <Group
+            position={adaptive.tablet ? "center" : "left"}
+            sx={{ fontSize: adaptive.mobile ? "0.7em" : "1em" }}
+          >
             Anna Kalakoltsau
           </Group>
           <Group
