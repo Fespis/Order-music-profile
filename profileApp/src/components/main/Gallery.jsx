@@ -14,7 +14,7 @@ function Gallery(props) {
   const { adaptive } = props;
   const { classes } = useStyles();
 
-  function a1(adaptive) {
+  function returnCountOfSpan(adaptive) {
     const { tablet } = adaptive;
     const { mobile } = adaptive;
 
@@ -48,40 +48,40 @@ function Gallery(props) {
           <Stack>
             <Group position="center">Gallery</Group>
             <Grid>
-              <Grid.Col span={a1(adaptive)}>
+              <Grid.Col span={returnCountOfSpan(adaptive)}>
                 <Image src={"https://clck.ru/3375Zj"}></Image>
               </Grid.Col>
-              <Grid.Col span={a1(adaptive)}>
+              <Grid.Col span={returnCountOfSpan(adaptive)}>
                 <Image src={"https://clck.ru/3375Zj"}></Image>
               </Grid.Col>
-              <Grid.Col span={a1(adaptive)}>
+              <Grid.Col span={returnCountOfSpan(adaptive)}>
                 <Image src={"https://clck.ru/3375Zj"}></Image>
               </Grid.Col>
-              <Grid.Col span={a1(adaptive)}>
+              <Grid.Col span={returnCountOfSpan(adaptive)}>
                 <Image src={"https://clck.ru/3375Zj"}></Image>
               </Grid.Col>
-              <Grid.Col span={a1(adaptive)}>
+              <Grid.Col span={returnCountOfSpan(adaptive)}>
                 <Image src={"https://clck.ru/3375Zj"}></Image>
               </Grid.Col>
-              <Grid.Col span={a1(adaptive)}>
+              <Grid.Col span={returnCountOfSpan(adaptive)}>
                 <Image src={"https://clck.ru/3375Zj"}></Image>
               </Grid.Col>
-              <Grid.Col span={a1(adaptive)}>
+              <Grid.Col span={returnCountOfSpan(adaptive)}>
                 <Image src={"https://clck.ru/3375Zj"}></Image>
               </Grid.Col>
-              <Grid.Col span={a1(adaptive)}>
+              <Grid.Col span={returnCountOfSpan(adaptive)}>
                 <Image src={"https://clck.ru/3375Zj"}></Image>
               </Grid.Col>
-              <Grid.Col span={a1(adaptive)}>
+              <Grid.Col span={returnCountOfSpan(adaptive)}>
                 <Image src={"https://clck.ru/3375Zj"}></Image>
               </Grid.Col>
-              <Grid.Col span={a1(adaptive)}>
+              <Grid.Col span={returnCountOfSpan(adaptive)}>
                 <Image src={"https://clck.ru/3375Zj"}></Image>
               </Grid.Col>
-              <Grid.Col span={a1(adaptive)}>
+              <Grid.Col span={returnCountOfSpan(adaptive)}>
                 <Image src={"https://clck.ru/3375Zj"}></Image>
               </Grid.Col>
-              <Grid.Col span={a1(adaptive)}>
+              <Grid.Col span={returnCountOfSpan(adaptive)}>
                 <Image src={"https://clck.ru/3375Zj"}></Image>
               </Grid.Col>
             </Grid>
