@@ -1,14 +1,5 @@
-import {
-  Box,
-  Container,
-  createStyles,
-  Group,
-  Image,
-  Text,
-} from "@mantine/core";
+import { Container, createStyles } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-import bioImage from "../../images/bioImage.jpg";
-import { useState } from "react";
 import Biography from "./Biography";
 
 const useStyles = createStyles((theme) => ({
