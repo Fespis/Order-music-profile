@@ -25,7 +25,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-function Main(props) {
+function Main() {
   const tablet = useMediaQuery(`(max-width: 1060px)`);
   const mobile = useMediaQuery(`(max-width: 640px)`);
 
