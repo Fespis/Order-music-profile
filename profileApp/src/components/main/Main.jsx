@@ -1,6 +1,7 @@
 import { Container, createStyles } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import Biography from "./Biography";
+import Gallery from "./Gallery";
 
 const useStyles = createStyles((theme) => ({
   buttonLink: {
@@ -36,6 +37,7 @@ function Main(props) {
     mobile: mobile,
     MinWidthForTablet: MinWidthForTablet,
     MinWidthForMobile: MinWidthForMobile,
+    ptForBlocks: 50,
   };
 
   return (
@@ -47,6 +49,7 @@ function Main(props) {
         }}
       >
         <Biography adaptive={adaptive} />
+        <Gallery adaptive={adaptive} />
       </Container>
     </>
   );

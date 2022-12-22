@@ -1,14 +1,13 @@
 import { Box, Group, Image } from "@mantine/core";
 import bioImage from "../../images/bioImage.jpg";
 
-
 function Biography(props) {
   const { adaptive } = props;
 
   return (
     <>
       <Group
-        pt={"xl"}
+        pt={adaptive.ptForBlocks}
         position="center"
         grow
         sx={{
