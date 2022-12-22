@@ -1,5 +1,4 @@
 import { Box, createStyles, Grid, Group, Image, Stack } from "@mantine/core";
-import bioImage from "../../images/bioImage.jpg";
 
 const useStyles = createStyles((theme) => ({
   widthMainBox: {
@@ -21,6 +20,17 @@ function Gallery(props) {
     if (mobile) return 12;
     if (tablet) return 6;
     return 3;
+  }
+
+  function addImages(countImages) {
+    const numberImages = [...Array(countImages).keys()];
+    return numberImages.map((imgCount) => {
+      return (
+        <Grid.Col span={returnCountOfSpan(adaptive)} key={imgCount}>
+          <Image src={require(`../../images/${imgCount}.jpg`)}></Image>
+        </Grid.Col>
+      );
+    });
   }
 
   return (
@@ -47,44 +57,7 @@ function Gallery(props) {
         <Box className={`${classes.widthMainBox}`}>
           <Stack>
             <Group position="center">Gallery</Group>
-            <Grid>
-              <Grid.Col span={returnCountOfSpan(adaptive)}>
-                <Image src={"https://clck.ru/3375Zj"}></Image>
-              </Grid.Col>
-              <Grid.Col span={returnCountOfSpan(adaptive)}>
-                <Image src={"https://clck.ru/3375Zj"}></Image>
-              </Grid.Col>
-              <Grid.Col span={returnCountOfSpan(adaptive)}>
-                <Image src={"https://clck.ru/3375Zj"}></Image>
-              </Grid.Col>
-              <Grid.Col span={returnCountOfSpan(adaptive)}>
-                <Image src={"https://clck.ru/3375Zj"}></Image>
-              </Grid.Col>
-              <Grid.Col span={returnCountOfSpan(adaptive)}>
-                <Image src={"https://clck.ru/3375Zj"}></Image>
-              </Grid.Col>
-              <Grid.Col span={returnCountOfSpan(adaptive)}>
-                <Image src={"https://clck.ru/3375Zj"}></Image>
-              </Grid.Col>
-              <Grid.Col span={returnCountOfSpan(adaptive)}>
-                <Image src={"https://clck.ru/3375Zj"}></Image>
-              </Grid.Col>
-              <Grid.Col span={returnCountOfSpan(adaptive)}>
-                <Image src={"https://clck.ru/3375Zj"}></Image>
-              </Grid.Col>
-              <Grid.Col span={returnCountOfSpan(adaptive)}>
-                <Image src={"https://clck.ru/3375Zj"}></Image>
-              </Grid.Col>
-              <Grid.Col span={returnCountOfSpan(adaptive)}>
-                <Image src={"https://clck.ru/3375Zj"}></Image>
-              </Grid.Col>
-              <Grid.Col span={returnCountOfSpan(adaptive)}>
-                <Image src={"https://clck.ru/3375Zj"}></Image>
-              </Grid.Col>
-              <Grid.Col span={returnCountOfSpan(adaptive)}>
-                <Image src={"https://clck.ru/3375Zj"}></Image>
-              </Grid.Col>
-            </Grid>
+            <Grid>{addImages(12)}</Grid>
           </Stack>
         </Box>
       </Group>
