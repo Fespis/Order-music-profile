@@ -10,12 +10,12 @@ const useStyles = createStyles((theme) => ({
 }));
 
 function Gallery(props) {
-  const { adaptive } = props;
+  const { mainData } = props;
   const { classes } = useStyles();
 
-  function returnCountOfSpan(adaptive) {
-    const { tablet } = adaptive;
-    const { mobile } = adaptive;
+  function returnCountOfSpan(mainData) {
+    const { tablet } = mainData;
+    const { mobile } = mainData;
 
     if (mobile) return 12;
     if (tablet) return 6;
@@ -26,7 +26,7 @@ function Gallery(props) {
     const numberImages = [...Array(countImages).keys()];
     return numberImages.map((imgCount) => {
       return (
-        <Grid.Col span={returnCountOfSpan(adaptive)} key={imgCount}>
+        <Grid.Col span={returnCountOfSpan(mainData)} key={imgCount}>
           <Image src={require(`../../images/${imgCount}.jpg`)}></Image>
         </Grid.Col>
       );
@@ -39,19 +39,19 @@ function Gallery(props) {
       sx={{
         color: "#000",
         minWidth:
-          (adaptive.mobile && adaptive.MinWidthForMobile) ||
-          (adaptive.tablet && adaptive.MinWidthForTablet),
+          (mainData.mobile && mainData.MinWidthForMobile) ||
+          (mainData.tablet && mainData.MinWidthForTablet),
       }}
     >
       <Group
-        pt={adaptive.ptForBlocks}
+        pt={mainData.ptForBlocks}
         position="center"
         grow
         sx={{
           color: "#000",
           maxWidth:
-            (adaptive.mobile && adaptive.MinWidthForMobile) ||
-            (adaptive.tablet && adaptive.MinWidthForTablet),
+            (mainData.mobile && mainData.MinWidthForMobile) ||
+            (mainData.tablet && mainData.MinWidthForTablet),
         }}
       >
         <Box className={`${classes.widthMainBox}`}>

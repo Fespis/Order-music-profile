@@ -2,31 +2,31 @@ import { Box, Group, Image } from "@mantine/core";
 import bioImage from "../../images/bioImage.jpg";
 
 function Biography(props) {
-  const { adaptive } = props;
+  const { mainData } = props;
 
   return (
     <>
       <Group
-        pt={adaptive.ptForBlocks}
+        pt={mainData.ptForBlocks}
         position="center"
         grow
         sx={{
           color: "#000",
-          flexDirection: adaptive.tablet ? "column-reverse" : "row",
+          flexDirection: mainData.tablet ? "column-reverse" : "row",
           minWidth:
-            (adaptive.mobile && adaptive.MinWidthForMobile) ||
-            (adaptive.tablet && adaptive.MinWidthForTablet),
+            (mainData.mobile && mainData.MinWidthForMobile) ||
+            (mainData.tablet && mainData.MinWidthForTablet),
         }}
       >
         <Box sx={{ minWidth: "inherit" }}>
           <Group
-            position={adaptive.tablet ? "center" : "left"}
-            sx={{ fontSize: adaptive.mobile ? "0.85em" : "1em" }}
+            position={mainData.tablet ? "center" : "left"}
+            sx={{ fontSize: mainData.mobile ? "0.85em" : "1em" }}
           >
             Anna Kalakoltsau
           </Group>
           <Group
-            position={adaptive.tablet ? "center" : "left"}
+            position={mainData.tablet ? "center" : "left"}
             pt={"sm"}
             sx={{ fontSize: "0.75em" }}
           >

@@ -32,7 +32,7 @@ function Main() {
   const MinWidthForTablet = "60vw";
   const MinWidthForMobile = "80vw";
 
-  const adaptive = {
+  const mainData = {
     tablet: tablet,
     mobile: mobile,
     MinWidthForTablet: MinWidthForTablet,
@@ -48,8 +48,8 @@ function Main() {
           height: 1200,
         }}
       >
-        <Biography adaptive={adaptive} />
-        <Gallery adaptive={adaptive} />
+        <Biography mainData={mainData} />
+        <Gallery mainData={mainData} />
       </Container>
     </>
   );
