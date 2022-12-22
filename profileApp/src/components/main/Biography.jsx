@@ -19,10 +19,16 @@ function Biography(props) {
         }}
       >
         <Box sx={{ minWidth: "inherit" }}>
-          <Box>Anna Kalakoltsau</Box>
-          <Box pt={"sm"} sx={{ fontSize: "0.75em" }}>
+          <Group position={adaptive.tablet ? "center" : "left"}>
+            Anna Kalakoltsau
+          </Group>
+          <Group
+            position={adaptive.tablet ? "center" : "left"}
+            pt={"sm"}
+            sx={{ fontSize: "0.75em" }}
+          >
             About
-          </Box>
+          </Group>
           <Box pt={"sm"} sx={{ fontSize: "0.5em" }}>
             Sayaka Shoji has become internationally recognised for her artistic
             versatility and deep engagements with each repertoire. Her
