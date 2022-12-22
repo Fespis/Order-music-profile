@@ -1,8 +1,18 @@
-import { Box, Grid, Group, Image, Stack } from "@mantine/core";
+import { Box, createStyles, Grid, Group, Image, Stack } from "@mantine/core";
 import bioImage from "../../images/bioImage.jpg";
+
+const useStyles = createStyles((theme) => ({
+  widthMainBox: {
+    minWidth: "inherit",
+    [theme.fn.smallerThan("1060px")]: {
+      maxWidth: "calc(50% - 8px)",
+    },
+  },
+}));
 
 function Gallery(props) {
   const { adaptive } = props;
+  const { classes } = useStyles();
 
   function a1(adaptive) {
     const { tablet } = adaptive;
@@ -14,62 +24,71 @@ function Gallery(props) {
   }
 
   return (
-    <>
+    <Group
+      position="center"
+      sx={{
+        color: "#000",
+        minWidth:
+          (adaptive.mobile && adaptive.MinWidthForMobile) ||
+          (adaptive.tablet && adaptive.MinWidthForTablet),
+      }}
+    >
       <Group
         pt={adaptive.ptForBlocks}
         position="center"
         grow
         sx={{
           color: "#000",
-          flexDirection: adaptive.tablet ? "column-reverse" : "row",
-          minWidth:
+          maxWidth:
             (adaptive.mobile && adaptive.MinWidthForMobile) ||
             (adaptive.tablet && adaptive.MinWidthForTablet),
         }}
       >
-        <Stack>
-          <Group position="center">Gallery</Group>
-          <Grid>
-            <Grid.Col span={a1(adaptive)}>
-              <Image src={"https://clck.ru/3375Zj"}></Image>
-            </Grid.Col>
-            <Grid.Col span={a1(adaptive)}>
-              <Image src={"https://clck.ru/3375Zj"}></Image>
-            </Grid.Col>
-            <Grid.Col span={a1(adaptive)}>
-              <Image src={"https://clck.ru/3375Zj"}></Image>
-            </Grid.Col>
-            <Grid.Col span={a1(adaptive)}>
-              <Image src={"https://clck.ru/3375Zj"}></Image>
-            </Grid.Col>
-            <Grid.Col span={a1(adaptive)}>
-              <Image src={"https://clck.ru/3375Zj"}></Image>
-            </Grid.Col>
-            <Grid.Col span={a1(adaptive)}>
-              <Image src={"https://clck.ru/3375Zj"}></Image>
-            </Grid.Col>
-            <Grid.Col span={a1(adaptive)}>
-              <Image src={"https://clck.ru/3375Zj"}></Image>
-            </Grid.Col>
-            <Grid.Col span={a1(adaptive)}>
-              <Image src={"https://clck.ru/3375Zj"}></Image>
-            </Grid.Col>
-            <Grid.Col span={a1(adaptive)}>
-              <Image src={"https://clck.ru/3375Zj"}></Image>
-            </Grid.Col>
-            <Grid.Col span={a1(adaptive)}>
-              <Image src={"https://clck.ru/3375Zj"}></Image>
-            </Grid.Col>
-            <Grid.Col span={a1(adaptive)}>
-              <Image src={"https://clck.ru/3375Zj"}></Image>
-            </Grid.Col>
-            <Grid.Col span={a1(adaptive)}>
-              <Image src={"https://clck.ru/3375Zj"}></Image>
-            </Grid.Col>
-          </Grid>
-        </Stack>
+        <Box className={`${classes.widthMainBox}`}>
+          <Stack>
+            <Group position="center">Gallery</Group>
+            <Grid>
+              <Grid.Col span={a1(adaptive)}>
+                <Image src={"https://clck.ru/3375Zj"}></Image>
+              </Grid.Col>
+              <Grid.Col span={a1(adaptive)}>
+                <Image src={"https://clck.ru/3375Zj"}></Image>
+              </Grid.Col>
+              <Grid.Col span={a1(adaptive)}>
+                <Image src={"https://clck.ru/3375Zj"}></Image>
+              </Grid.Col>
+              <Grid.Col span={a1(adaptive)}>
+                <Image src={"https://clck.ru/3375Zj"}></Image>
+              </Grid.Col>
+              <Grid.Col span={a1(adaptive)}>
+                <Image src={"https://clck.ru/3375Zj"}></Image>
+              </Grid.Col>
+              <Grid.Col span={a1(adaptive)}>
+                <Image src={"https://clck.ru/3375Zj"}></Image>
+              </Grid.Col>
+              <Grid.Col span={a1(adaptive)}>
+                <Image src={"https://clck.ru/3375Zj"}></Image>
+              </Grid.Col>
+              <Grid.Col span={a1(adaptive)}>
+                <Image src={"https://clck.ru/3375Zj"}></Image>
+              </Grid.Col>
+              <Grid.Col span={a1(adaptive)}>
+                <Image src={"https://clck.ru/3375Zj"}></Image>
+              </Grid.Col>
+              <Grid.Col span={a1(adaptive)}>
+                <Image src={"https://clck.ru/3375Zj"}></Image>
+              </Grid.Col>
+              <Grid.Col span={a1(adaptive)}>
+                <Image src={"https://clck.ru/3375Zj"}></Image>
+              </Grid.Col>
+              <Grid.Col span={a1(adaptive)}>
+                <Image src={"https://clck.ru/3375Zj"}></Image>
+              </Grid.Col>
+            </Grid>
+          </Stack>
+        </Box>
       </Group>
-    </>
+    </Group>
   );
 }
 
