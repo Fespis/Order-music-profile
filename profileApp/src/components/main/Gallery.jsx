@@ -26,7 +26,11 @@ function Gallery(props) {
     const numberImages = [...Array(countImages).keys()];
     return numberImages.map((imgCount) => {
       return (
-        <Grid.Col span={returnCountOfSpan(mainData)} key={imgCount}>
+        <Grid.Col
+          p={"10px 0"}
+          span={returnCountOfSpan(mainData)}
+          key={imgCount}
+        >
           <Image src={require(`../../images/${imgCount}.jpg`)}></Image>
         </Grid.Col>
       );
@@ -36,6 +40,7 @@ function Gallery(props) {
   return (
     <Group
       position="center"
+      grow
       sx={{
         color: "#000",
         minWidth:
@@ -44,9 +49,8 @@ function Gallery(props) {
       }}
     >
       <Group
-        pt={mainData.ptForBlocks}
         position="center"
-        grow
+        pt={mainData.ptForBlocks}
         sx={{
           color: "#000",
           maxWidth:
@@ -57,7 +61,7 @@ function Gallery(props) {
         <Box className={`${classes.widthMainBox}`}>
           <Stack>
             <Group position="center">Gallery</Group>
-            <Grid>{addImages(mainData.countImagesInGallery)}</Grid>
+            <Grid m={0}>{addImages(mainData.countImagesInGallery)}</Grid>
           </Stack>
         </Box>
       </Group>

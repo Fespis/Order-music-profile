@@ -32,6 +32,7 @@ function Video(props) {
 
   return (
     <Group
+      position="center"
       grow
       sx={{
         color: "#000",
@@ -41,9 +42,8 @@ function Video(props) {
       }}
     >
       <Group
-        position="center"
-        pt={mainData.ptForBlocks}
         grow
+        pt={mainData.ptForBlocks}
         sx={{
           color: "#000",
           maxWidth:

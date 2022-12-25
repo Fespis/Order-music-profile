@@ -49,6 +49,10 @@ function Main() {
         link: "https://www.youtube.com/embed/RLItPN_6DfY",
         title: "CPE Bach Sonata in A Major Anna Kalakoltsau",
       },
+      {
+        link: "https://www.youtube.com/embed/RLItPN_6DfY",
+        title: "CPE Bach Sonata in A Major Anna Kalakoltsau",
+      },
     ],
   };
 
