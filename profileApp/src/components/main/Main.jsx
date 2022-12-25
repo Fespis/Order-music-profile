@@ -2,6 +2,7 @@ import { Container, createStyles } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import Biography from "./Biography";
 import Gallery from "./Gallery";
+import Tickets from "./Tickets";
 import Video from "./Video";
 
 const useStyles = createStyles((theme) => ({
@@ -62,6 +63,7 @@ function Main() {
         <Biography mainData={mainData} />
         <Gallery mainData={mainData} />
         <Video mainData={mainData}></Video>
+        <Tickets mainData={mainData}></Tickets>
       </Container>
     </>
   );
