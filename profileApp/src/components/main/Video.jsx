@@ -53,7 +53,9 @@ function Video(props) {
       >
         <Stack>
           <Group position="center">Video</Group>
-          <Grid>{addVideos(mainData.videoInfo)}</Grid>
+          <Grid gutter="xs" grow>
+            {addVideos(mainData.videoInfo)}
+          </Grid>
         </Stack>
       </Group>
     </Group>

@@ -26,11 +26,7 @@ function Gallery(props) {
     const numberImages = [...Array(countImages).keys()];
     return numberImages.map((imgCount) => {
       return (
-        <Grid.Col
-          p={"10px 0"}
-          span={returnCountOfSpan(mainData)}
-          key={imgCount}
-        >
+        <Grid.Col span={returnCountOfSpan(mainData)} key={imgCount}>
           <Image src={require(`../../images/${imgCount}.jpg`)}></Image>
         </Grid.Col>
       );
@@ -61,7 +57,9 @@ function Gallery(props) {
         <Box className={`${classes.widthMainBox}`}>
           <Stack>
             <Group position="center">Gallery</Group>
-            <Grid m={0}>{addImages(mainData.countImagesInGallery)}</Grid>
+            <Grid gutter="xs" grow>
+              {addImages(mainData.countImagesInGallery)}
+            </Grid>
           </Stack>
         </Box>
       </Group>
