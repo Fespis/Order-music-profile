@@ -40,6 +40,16 @@ function Main() {
     MinWidthForMobile: MinWidthForMobile,
     ptForBlocks: 50,
     countImagesInGallery: 12,
+    videoInfo: [
+      {
+        link: "https://www.youtube.com/embed/C4xxJ-AdKQk",
+        title: "CPE Bach Sonata in A Major Anna Kalakoltsau",
+      },
+      {
+        link: "https://www.youtube.com/embed/RLItPN_6DfY",
+        title: "CPE Bach Sonata in A Major Anna Kalakoltsau",
+      },
+    ],
   };
 
   return (

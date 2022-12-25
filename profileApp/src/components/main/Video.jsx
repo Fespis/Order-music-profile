@@ -12,6 +12,24 @@ function Video(props) {
     return TWO_IFRAME_ON_WIDTH;
   }
 
+  function addVideos(videoInfo) {
+    return videoInfo.map((video, index) => {
+      return (
+        <Grid.Col span={returnCountOfSpan(mainData)} key={index}>
+          <iframe
+            width="100%"
+            height="315"
+            src={video.link}
+            title={video.title}
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </Grid.Col>
+      );
+    });
+  }
+
   return (
     <Group
       grow
@@ -35,30 +53,7 @@ function Video(props) {
       >
         <Stack>
           <Group position="center">Video</Group>
-          <Grid>
-            <Grid.Col span={returnCountOfSpan(mainData)}>
-              <iframe
-                width="100%"
-                height="315"
-                src="https://www.youtube.com/embed/C4xxJ-AdKQk"
-                title="CPE Bach Sonata in A Major Anna Kalakoltsau"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </Grid.Col>
-            <Grid.Col span={returnCountOfSpan(mainData)}>
-              <iframe
-                width="100%"
-                height="315"
-                src="https://www.youtube.com/embed/RLItPN_6DfY"
-                title="CPE Bach Sonata in A Major Anna Kalakoltsau"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </Grid.Col>
-          </Grid>
+          <Grid>{addVideos(mainData.videoInfo)}</Grid>
         </Stack>
       </Group>
     </Group>
