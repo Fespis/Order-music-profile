@@ -2,6 +2,7 @@ import { Container, createStyles } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import Biography from "./Biography";
 import Gallery from "./Gallery";
+import Video from "./Video";
 
 const useStyles = createStyles((theme) => ({
   buttonLink: {
@@ -46,11 +47,11 @@ function Main() {
       <Container
         sx={{
           width: "inherit",
-          height: 1200,
         }}
       >
         <Biography mainData={mainData} />
         <Gallery mainData={mainData} />
+        <Video mainData={mainData}></Video>
       </Container>
     </>
   );
