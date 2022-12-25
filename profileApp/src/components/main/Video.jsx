@@ -1,17 +1,15 @@
-import { createStyles, Grid, Group, Stack } from "@mantine/core";
-
-const useStyles = createStyles((theme) => ({}));
+import { Grid, Group, Stack } from "@mantine/core";
 
 function Video(props) {
   const { mainData } = props;
-  const { classes } = useStyles();
 
   function returnCountOfSpan(mainData) {
-    const { tablet } = mainData;
     const { mobile } = mainData;
+    const ONE_IFRAME_ON_WIDTH = 12;
+    const TWO_IFRAME_ON_WIDTH = 6;
 
-    if (mobile) return 12;
-    return 6;
+    if (mobile) return ONE_IFRAME_ON_WIDTH;
+    return TWO_IFRAME_ON_WIDTH;
   }
 
   return (
