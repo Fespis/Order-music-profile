@@ -1,31 +1,31 @@
-import { Container, createStyles } from "@mantine/core";
+import { Container } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import Biography from "./Biography";
 import Gallery from "./Gallery";
 import Tickets from "./Tickets";
 import Video from "./Video";
 
-const useStyles = createStyles((theme) => ({
-  buttonLink: {
-    padding: "10px 20px",
-    width: 140,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    border: "1px solid #fff",
-    borderRadius: 50,
-    transition: "all ease 0.5s",
-    cursor: "pointer",
-    [theme.fn.smallerThan("1060")]: {
-      display: "none",
-    },
+// const useStyles = createStyles((theme) => ({
+//   buttonLink: {
+//     padding: "10px 20px",
+//     width: 140,
+//     display: "flex",
+//     alignItems: "center",
+//     justifyContent: "center",
+//     border: "1px solid #fff",
+//     borderRadius: 50,
+//     transition: "all ease 0.5s",
+//     cursor: "pointer",
+//     [theme.fn.smallerThan("1060")]: {
+//       display: "none",
+//     },
 
-    "&:hover": {
-      backgroundColor: "#fff",
-      color: "#000",
-    },
-  },
-}));
+//     "&:hover": {
+//       backgroundColor: "#fff",
+//       color: "#000",
+//     },
+//   },
+// }));
 
 function Main() {
   const tablet = useMediaQuery(`(max-width: 1060px)`);

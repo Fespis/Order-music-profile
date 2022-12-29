@@ -1,13 +1,9 @@
 import {
-  Autocomplete,
   Burger,
-  Button,
   Container,
   createStyles,
-  Divider,
   Drawer,
   Group,
-  ScrollArea,
   Stack,
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
@@ -33,18 +29,6 @@ const useStyles = createStyles((theme) => ({
       color: "#000",
     },
   },
-
-  // burgerMobile: {
-  //   display: "none",
-  //   height: 36,
-  //   cursor: "pointer",
-  //   [theme.fn.smallerThan("sm")]: {
-  //     display: "block",
-  //   },
-  //   "& span": {
-  //     margin: 0,
-  //   },
-  // },
 }));
 
 function Navigation(props) {
