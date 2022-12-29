@@ -1,21 +1,7 @@
-import {
-  Box,
-  Burger,
-  Container,
-  createStyles,
-  Drawer,
-  Group,
-  Image,
-  Stack,
-} from "@mantine/core";
+import { Box, Group, Image, Stack } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-import { useState } from "react";
-
-const useStyles = createStyles((theme) => ({}));
 
 function Footer(props) {
-  const { classes } = useStyles();
-  const [opened, setOpened] = useState(false);
   const mobile = useMediaQuery(`(max-width: 1060px)`);
 
   return (
@@ -37,7 +23,7 @@ function Footer(props) {
           <Box>+44 (0)20 3725 9184</Box>
           <Box>federico.hernandez@harrisonparrott.co.uk</Box>
         </Stack>
-        <Group  spacing={40}>
+        <Group spacing={40}>
           <a href="">
             <Image src={require(`../../images/linkedin.png`)}></Image>
           </a>
