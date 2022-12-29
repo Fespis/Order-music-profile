@@ -1,7 +1,18 @@
-import { Box, Grid, Group, Stack } from "@mantine/core";
+import { Box, createStyles, Grid, Group, Stack } from "@mantine/core";
+
+const useStyles = createStyles((theme) => ({
+  buttonTickets: {
+    padding: "5px 30px",
+    backgroundColor: "red",
+    color: "#fff",
+    cursor: "pointer",
+    textDecoration: "none",
+  },
+}));
 
 function Tickets(props) {
   const { mainData } = props;
+  const { classes } = useStyles();
 
   return (
     <Group
@@ -33,25 +44,14 @@ function Tickets(props) {
               <Group>Nov. 01, 2022</Group>
               <Group position="center">Lucerne, Switzerland</Group>
               <Group position="center">Music Hall</Group>
-              <Group position="right">Tickets</Group>
-            </Group>
-            <Group grow>
-              <Group>Nov. 01, 2022</Group>
-              <Group position="center">Lucerne, Switzerland</Group>
-              <Group position="center">Music Hall</Group>
-              <Group position="right">Tickets</Group>
-            </Group>
-            <Group grow>
-              <Group>Nov. 01, 2022</Group>
-              <Group position="center">Lucerne, Switzerland</Group>
-              <Group position="center">Music Hall</Group>
-              <Group position="right">Tickets</Group>
-            </Group>
-            <Group grow>
-              <Group>Nov. 01, 2022</Group>
-              <Group position="center">Lucerne, Switzerland</Group>
-              <Group position="center">Music Hall</Group>
-              <Group position="right">Tickets</Group>
+              <Group position="right">
+                <a
+                  href="https://www.youtube.com/watch?v=C4xxJ-AdKQk"
+                  className={classes.buttonTickets}
+                >
+                  Tickets
+                </a>
+              </Group>
             </Group>
           </Stack>
         </Stack>
