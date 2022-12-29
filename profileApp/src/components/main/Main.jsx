@@ -51,6 +51,32 @@ function Main() {
         title: "CPE Bach Sonata in A Major Anna Kalakoltsau",
       },
     ],
+    ticketsInfo: [
+      {
+        date: "Nov. 01, 2022",
+        city: "Lucerne, Switzerland",
+        place: "Music Hall",
+        link: "https://www.youtube.com/watch?v=C4xxJ-AdKQk",
+      },
+      {
+        date: "Nov. 01, 2022",
+        city: "Lucerne, Switzerland",
+        place: "Music Hall",
+        link: "https://www.youtube.com/watch?v=C4xxJ-AdKQk",
+      },
+      {
+        date: "Nov. 01, 2022",
+        city: "Lucerne, Switzerland",
+        place: "Music Hall",
+        link: "https://www.youtube.com/watch?v=C4xxJ-AdKQk",
+      },
+      {
+        date: "Nov. 01, 2022",
+        city: "Lucerne, Switzerland",
+        place: "Music Hall",
+        link: "https://www.youtube.com/watch?v=C4xxJ-AdKQk",
+      },
+    ],
   };
 
   return (

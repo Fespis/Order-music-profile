@@ -1,4 +1,5 @@
-import { Box, createStyles, Grid, Group, Stack } from "@mantine/core";
+import { createStyles, Group, Stack } from "@mantine/core";
+import { useState } from "react";
 
 const useStyles = createStyles((theme) => ({
   buttonTickets: {
@@ -13,6 +14,9 @@ const useStyles = createStyles((theme) => ({
 function Tickets(props) {
   const { mainData } = props;
   const { classes } = useStyles();
+  const [showTicketsInfo, setShowTicketsInfo] = useState(
+    Boolean(mainData.ticketsInfo.length)
+  );
 
   return (
     <Group
@@ -40,19 +44,24 @@ function Tickets(props) {
             Tickets
           </Group>
           <Stack sx={{ fontSize: "0.5em", gap: 60 }}>
-            <Group grow>
-              <Group>Nov. 01, 2022</Group>
-              <Group position="center">Lucerne, Switzerland</Group>
-              <Group position="center">Music Hall</Group>
-              <Group position="right">
-                <a
-                  href="https://www.youtube.com/watch?v=C4xxJ-AdKQk"
-                  className={classes.buttonTickets}
-                >
-                  Tickets
-                </a>
-              </Group>
-            </Group>
+            {showTicketsInfo ? (
+              mainData.ticketsInfo.map((ticket) => {
+                return (
+                  <Group grow>
+                    <Group>{ticket.date}</Group>
+                    <Group position="center">{ticket.city}</Group>
+                    <Group position="center">{ticket.place}</Group>
+                    <Group position="right">
+                      <a href={ticket.link} className={classes.buttonTickets}>
+                        Tickets
+                      </a>
+                    </Group>
+                  </Group>
+                );
+              })
+            ) : (
+              <Group position="center">No ticket details</Group>
+            )}
           </Stack>
         </Stack>
       </Group>
