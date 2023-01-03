@@ -12,7 +12,6 @@ const useStyles = createStyles((theme) => ({
   },
 
   accordionPanel: {
-    gap: 10,
     display: "flex",
     justifyContent: "space-between",
   },

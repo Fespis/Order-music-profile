@@ -42,20 +42,19 @@ function Footer(props) {
         ref={refsNavigation}
       >
         <Stack justify="center">
-          <Box>+44 (0)20 3725 9184</Box>
-          <Box>federico.hernandez@harrisonparrott.co.uk</Box>
+          <Box>AnnaKalataltsau@yahoo.com</Box>
         </Stack>
         <Group spacing={40}>
-          <a href="">
+          <a href="https://www.youtube.com/embed/C4xxJ-AdKQk">
             <Image src={require(`../../images/linkedin.png`)}></Image>
           </a>
-          <a href="">
+          <a href="https://www.youtube.com/embed/C4xxJ-AdKQk">
             <Image src={require(`../../images/instagram.png`)}></Image>
           </a>
-          <a href="">
+          <a href="https://www.youtube.com/embed/C4xxJ-AdKQk">
             <Image src={require(`../../images/telegram.png`)}></Image>
           </a>
-          <a href="">
+          <a href="https://www.youtube.com/embed/C4xxJ-AdKQk">
             <Image src={require(`../../images/facebook.png`)}></Image>
           </a>
         </Group>
