@@ -4,7 +4,7 @@ import Navigation from "./components/nav/Navigation";
 import { useMediaQuery } from "@mantine/hooks";
 import Main from "./components/main/Main";
 import Footer from "./components/footer/Footer";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function App() {
   const HEIGHT_NAV = 120;
@@ -19,6 +19,20 @@ function App() {
     tickets: useRef(),
     contacts: useRef(),
   };
+
+  // const [positionNavPanel, setPositionNavPanel] = useState(false);
+
+  // useEffect(() => {
+  //   window.addEventListener("scroll", () => {
+  //     const coordinateNavPanel =
+  //       refsNavigation.start.current.getBoundingClientRect().y;
+
+  //     if (coordinateNavPanel < 0 && positionNavPanel === false) {
+  //       setPositionNavPanel(true);
+  //     }
+  //     console.log(coordinateNavPanel);
+  //   });
+  // }, []);
 
   return (
     <Box sx={{ color: "#fff", scrollBehavior: "smooth" }}>
@@ -43,6 +57,7 @@ function App() {
         height={HEIGHT_NAV}
         allRefs={refsNavigation}
         refsNavigation={refsNavigation.start}
+        // positionNavPanel={positionNavPanel}
       />
       <Main refsNavigation={refsNavigation} />
       <Footer

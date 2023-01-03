@@ -34,13 +34,14 @@ const useStyles = createStyles((theme) => ({
 function Navigation(props) {
   const { allRefs } = props;
   const { refsNavigation } = props;
+  const { positionNavPanel } = props;
 
   const { classes } = useStyles();
   const [opened, setOpened] = useState(false);
   const tablet = useMediaQuery(`(max-width: 1060px)`);
 
   function buttonHandler(refName) {
-    allRefs[refName].current.scrollIntoView({behavior: "smooth"});
+    allRefs[refName].current.scrollIntoView({ behavior: "smooth" });
     setOpened(false);
   }
 
@@ -51,6 +52,7 @@ function Navigation(props) {
         spacing={100}
         p={"lg"}
         sx={{
+          position: positionNavPanel ? "fixed" : "inherit",
           backgroundColor: "#11171D",
           width: "inherit",
           height: `${props.height}px`,
@@ -115,7 +117,7 @@ function Navigation(props) {
         position="top"
         size="full"
         transition="slide-down"
-        transitionDuration={1000}
+        transitionDuration={500}
         withCloseButton={false}
       >
         <Group
