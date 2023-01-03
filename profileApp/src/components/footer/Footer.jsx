@@ -25,6 +25,8 @@ const useStyles = createStyles((theme) => ({
 }));
 
 function Footer(props) {
+  const { refsNavigation } = props;
+
   const { classes } = useStyles();
   const mobile = useMediaQuery(`(max-width: 640px)`);
 
@@ -37,6 +39,7 @@ function Footer(props) {
           height: props.height,
         }}
         className={mobile ? classes.footerGroupMobile : classes.footerGroup}
+        ref={refsNavigation}
       >
         <Stack justify="center">
           <Box>+44 (0)20 3725 9184</Box>

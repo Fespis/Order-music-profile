@@ -3,6 +3,7 @@ import bioImage from "../../images/bioImage.jpg";
 
 function Biography(props) {
   const { mainData } = props;
+  const { refsNavigation } = props;
 
   return (
     <>
@@ -17,6 +18,7 @@ function Biography(props) {
             (mainData.mobile && mainData.MinWidthForMobile) ||
             (mainData.tablet && mainData.MinWidthForTablet),
         }}
+        ref={refsNavigation}
       >
         <Box sx={{ minWidth: "inherit" }}>
           <Group

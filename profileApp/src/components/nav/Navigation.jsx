@@ -32,9 +32,17 @@ const useStyles = createStyles((theme) => ({
 }));
 
 function Navigation(props) {
+  const { allRefs } = props;
+  const { refsNavigation } = props;
+
   const { classes } = useStyles();
   const [opened, setOpened] = useState(false);
   const tablet = useMediaQuery(`(max-width: 1060px)`);
+
+  function buttonHandler(refName) {
+    allRefs[refName].current.scrollIntoView();
+    setOpened(false);
+  }
 
   return (
     <>
@@ -48,6 +56,7 @@ function Navigation(props) {
           height: `${props.height}px`,
           justifyContent: !tablet && "space-around",
         }}
+        ref={refsNavigation}
       >
         {tablet ? (
           <Burger
@@ -58,14 +67,44 @@ function Navigation(props) {
         ) : (
           <>
             <Group spacing="lg" position="left" sx={{ fontSize: "0.7em" }}>
-              <div className={`${classes.buttonLink}`}>Start</div>
-              <div className={`${classes.buttonLink}`}>Biography</div>
-              <div className={`${classes.buttonLink}`}>Gallery</div>
+              <div
+                className={`${classes.buttonLink}`}
+                onClick={() => buttonHandler("start")}
+              >
+                Start
+              </div>
+              <div
+                className={`${classes.buttonLink}`}
+                onClick={() => buttonHandler("biography")}
+              >
+                Biography
+              </div>
+              <div
+                className={`${classes.buttonLink}`}
+                onClick={() => buttonHandler("gallery")}
+              >
+                Gallery
+              </div>
             </Group>
             <Group spacing="lg" position="right" sx={{ fontSize: "0.7em" }}>
-              <div className={`${classes.buttonLink}`}>Video</div>
-              <div className={`${classes.buttonLink}`}>Calendar</div>
-              <div className={`${classes.buttonLink}`}>Contacts</div>
+              <div
+                className={`${classes.buttonLink}`}
+                onClick={() => buttonHandler("video")}
+              >
+                Video
+              </div>
+              <div
+                className={`${classes.buttonLink}`}
+                onClick={() => buttonHandler("tickets")}
+              >
+                Tickets
+              </div>
+              <div
+                className={`${classes.buttonLink}`}
+                onClick={() => buttonHandler("contacts")}
+              >
+                Contacts
+              </div>
             </Group>
           </>
         )}
@@ -95,12 +134,20 @@ function Navigation(props) {
           />
         </Group>
         <Stack sx={{ height: "100vh" }} justify="center">
-          <Container>Start</Container>
-          <Container>Biography</Container>
-          <Container>Gallery</Container>
-          <Container>Video</Container>
-          <Container>Calendar</Container>
-          <Container>Contacts</Container>
+          <Container onClick={() => buttonHandler("start")}>Start</Container>
+          <Container onClick={() => buttonHandler("biography")}>
+            Biography
+          </Container>
+          <Container onClick={() => buttonHandler("gallery")}>
+            Gallery
+          </Container>
+          <Container onClick={() => buttonHandler("video")}>Video</Container>
+          <Container onClick={() => buttonHandler("tickets")}>
+            Tickets
+          </Container>
+          <Container onClick={() => buttonHandler("contacts")}>
+            Contacts
+          </Container>
         </Stack>
       </Drawer>
     </>

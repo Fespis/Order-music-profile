@@ -1,4 +1,4 @@
-import { Container } from "@mantine/core";
+import { Container, filterProps } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import Biography from "./Biography";
 import Gallery from "./Gallery";
@@ -27,7 +27,9 @@ import Video from "./Video";
 //   },
 // }));
 
-function Main() {
+function Main(props) {
+  const { refsNavigation } = props;
+
   const tablet = useMediaQuery(`(max-width: 1060px)`);
   const mobile = useMediaQuery(`(max-width: 640px)`);
 
@@ -86,10 +88,19 @@ function Main() {
           width: "inherit",
         }}
       >
-        <Biography mainData={mainData} />
-        <Gallery mainData={mainData} />
-        <Video mainData={mainData}></Video>
-        <Tickets mainData={mainData}></Tickets>
+        <Biography
+          mainData={mainData}
+          refsNavigation={refsNavigation.biography}
+        />
+        <Gallery mainData={mainData} refsNavigation={refsNavigation.gallery} />
+        <Video
+          mainData={mainData}
+          refsNavigation={refsNavigation.video}
+        ></Video>
+        <Tickets
+          mainData={mainData}
+          refsNavigation={refsNavigation.tickets}
+        ></Tickets>
       </Container>
     </>
   );

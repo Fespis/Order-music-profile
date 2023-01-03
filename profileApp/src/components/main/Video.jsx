@@ -2,6 +2,7 @@ import { Grid, Group, Stack } from "@mantine/core";
 
 function Video(props) {
   const { mainData } = props;
+  const { refsNavigation } = props;
 
   function returnCountOfSpan(mainData) {
     const { mobile } = mainData;
@@ -21,9 +22,8 @@ function Video(props) {
             height="315"
             src={video.link}
             title={video.title}
-            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </Grid.Col>
       );
@@ -40,6 +40,7 @@ function Video(props) {
           (mainData.mobile && mainData.MinWidthForMobile) ||
           (mainData.tablet && mainData.MinWidthForTablet),
       }}
+      ref={refsNavigation}
     >
       <Group
         grow

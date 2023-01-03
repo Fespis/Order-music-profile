@@ -11,6 +11,8 @@ const useStyles = createStyles((theme) => ({
 
 function Gallery(props) {
   const { mainData } = props;
+  const { refsNavigation } = props;
+
   const { classes } = useStyles();
 
   function returnCountOfSpan(mainData) {
@@ -43,6 +45,7 @@ function Gallery(props) {
           (mainData.mobile && mainData.MinWidthForMobile) ||
           (mainData.tablet && mainData.MinWidthForTablet),
       }}
+      ref={refsNavigation}
     >
       <Group
         position="center"

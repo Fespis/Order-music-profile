@@ -50,6 +50,8 @@ const useStyles = createStyles((theme) => ({
 
 function Tickets(props) {
   const { mainData } = props;
+  const { refsNavigation } = props;
+
   const { classes } = useStyles();
   const tablet = useMediaQuery(`(max-width: 1060px)`);
 
@@ -67,6 +69,7 @@ function Tickets(props) {
           (mainData.mobile && mainData.MinWidthForMobile) ||
           (mainData.tablet && mainData.MinWidthForTablet),
       }}
+      ref={refsNavigation}
     >
       <Group
         grow

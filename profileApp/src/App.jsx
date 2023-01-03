@@ -4,14 +4,24 @@ import Navigation from "./components/nav/Navigation";
 import { useMediaQuery } from "@mantine/hooks";
 import Main from "./components/main/Main";
 import Footer from "./components/footer/Footer";
+import { useRef } from "react";
 
 function App() {
   const HEIGHT_NAV = 120;
   const HEIGHT_FOOTER = 163;
   const mobile = useMediaQuery(`(max-width: 1060px)`);
 
+  const refsNavigation = {
+    start: useRef(),
+    biography: useRef(),
+    gallery: useRef(),
+    video: useRef(),
+    tickets: useRef(),
+    contacts: useRef(),
+  };
+
   return (
-    <Box sx={{ color: "#fff" }}>
+    <Box sx={{ color: "#fff", scrollBehavior: "smooth" }}>
       <Box sx={{ position: "relative" }}>
         <Image
           fit="fill"
@@ -29,9 +39,16 @@ function App() {
           Anna Kalakoltsau
         </Box>
       </Box>
-      <Navigation height={HEIGHT_NAV} />
-      <Main />
-      <Footer height={HEIGHT_FOOTER}></Footer>
+      <Navigation
+        height={HEIGHT_NAV}
+        allRefs={refsNavigation}
+        refsNavigation={refsNavigation.start}
+      />
+      <Main refsNavigation={refsNavigation} />
+      <Footer
+        height={HEIGHT_FOOTER}
+        refsNavigation={refsNavigation.contacts}
+      ></Footer>
     </Box>
   );
 }
