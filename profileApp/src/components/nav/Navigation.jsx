@@ -40,7 +40,7 @@ function Navigation(props) {
   const tablet = useMediaQuery(`(max-width: 1060px)`);
 
   function buttonHandler(refName) {
-    allRefs[refName].current.scrollIntoView();
+    allRefs[refName].current.scrollIntoView({behavior: "smooth"});
     setOpened(false);
   }
 
