@@ -7,6 +7,7 @@ import Footer from "./components/footer/Footer";
 
 function App() {
   const HEIGHT_NAV = 120;
+  const HEIGHT_FOOTER = 163;
   const mobile = useMediaQuery(`(max-width: 1060px)`);
 
   return (
@@ -30,7 +31,7 @@ function App() {
       </Box>
       <Navigation height={HEIGHT_NAV} />
       <Main />
-      <Footer></Footer>
+      <Footer height={HEIGHT_FOOTER}></Footer>
     </Box>
   );
 }

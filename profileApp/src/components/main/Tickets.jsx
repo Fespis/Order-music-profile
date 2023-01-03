@@ -51,7 +51,7 @@ const useStyles = createStyles((theme) => ({
 function Tickets(props) {
   const { mainData } = props;
   const { classes } = useStyles();
-  const mobile = useMediaQuery(`(max-width: 1060px)`);
+  const tablet = useMediaQuery(`(max-width: 1060px)`);
 
   const [showTicketsInfo, setShowTicketsInfo] = useState(
     Boolean(mainData.ticketsInfo.length)
@@ -82,7 +82,7 @@ function Tickets(props) {
           <Group position="center" mb={60}>
             Tickets
           </Group>
-          <Stack sx={{ fontSize: "0.5em", gap: mobile ? 0 : 60 }}>
+          <Stack sx={{ fontSize: "0.5em", gap: tablet ? 0 : 60 }}>
             {showTicketsInfo ? (
               <Accordion
                 variant="filled"
@@ -99,7 +99,7 @@ function Tickets(props) {
             )}
             {showTicketsInfo ? (
               mainData.ticketsInfo.map((ticket, index) => {
-                return mobile ? (
+                return tablet ? (
                   <Accordion
                     variant="filled"
                     defaultValue="customization"

@@ -1,25 +1,44 @@
-import { Box, Group, Image, Stack } from "@mantine/core";
+import { Box, createStyles, Group, Image, Stack } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 
+const useStyles = createStyles((theme) => ({
+  footerGroup: {
+    display: "flex",
+    justifyContent: "space-around",
+    width: "inherit",
+    borderTop: "1px solid black",
+    color: "#000",
+    fontSize: "0.5em",
+  },
+
+  footerGroupMobile: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+    gap: 40,
+    width: "inherit",
+    borderTop: "1px solid black",
+    color: "#000",
+    fontSize: "0.5em",
+  },
+}));
+
 function Footer(props) {
-  const mobile = useMediaQuery(`(max-width: 1060px)`);
+  const { classes } = useStyles();
+  const mobile = useMediaQuery(`(max-width: 640px)`);
 
   return (
     <>
-      <Group
-        position="center"
+      <Box
         mt={150}
         spacing={100}
         sx={{
-          height: 163,
-          width: "inherit",
-          borderTop: "1px solid black",
-          color: "#000",
-          fontSize: "0.5em",
-          justifyContent: "space-around",
+          height: props.height,
         }}
+        className={mobile ? classes.footerGroupMobile : classes.footerGroup}
       >
-        <Stack>
+        <Stack justify="center">
           <Box>+44 (0)20 3725 9184</Box>
           <Box>federico.hernandez@harrisonparrott.co.uk</Box>
         </Stack>
@@ -37,7 +56,7 @@ function Footer(props) {
             <Image src={require(`../../images/facebook.png`)}></Image>
           </a>
         </Group>
-      </Group>
+      </Box>
     </>
   );
 }

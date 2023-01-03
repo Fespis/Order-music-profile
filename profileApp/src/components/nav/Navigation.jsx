@@ -34,22 +34,22 @@ const useStyles = createStyles((theme) => ({
 function Navigation(props) {
   const { classes } = useStyles();
   const [opened, setOpened] = useState(false);
-  const mobile = useMediaQuery(`(max-width: 1060px)`);
+  const tablet = useMediaQuery(`(max-width: 1060px)`);
 
   return (
     <>
       <Group
-        position={mobile && "right"}
+        position={tablet && "right"}
         spacing={100}
         p={"lg"}
         sx={{
           backgroundColor: "#11171D",
           width: "inherit",
           height: `${props.height}px`,
-          justifyContent: !mobile && "space-around",
+          justifyContent: !tablet && "space-around",
         }}
       >
-        {mobile ? (
+        {tablet ? (
           <Burger
             color="#fff"
             opened={opened}
